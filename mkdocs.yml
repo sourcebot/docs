@@ -1,4 +1,8 @@
 site_name: Sourcebot
+theme: readthedocs
 pages:
 - Home: index.md
+- Installation: installation.md
+- API: api.md
+- Examples: examples.md
 - About: about.md

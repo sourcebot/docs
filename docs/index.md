@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+# Welcome to Sourcebot
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+SourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.
 
-## Commands
+Benefits of **Sourcebot**:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+- Uses EcmaScript 6 class architecture.
+- Easily debuggable.
+- Uses Promises, catches uncaught exceptions on the way.
 
-## Project layout
+## Status
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[![David](https://img.shields.io/david/sourcebot/sourcebot.svg)](https://david-dm.org/sourcebot/sourcebot)
+[![Code Climate](https://codeclimate.com/github/sourcebot/sourcebot/badges/gpa.svg)](https://codeclimate.com/github/sourcebot/sourcebot)
+[![Build Status](https://travis-ci.org/sourcebot/sourcebot.svg?branch=master)](https://travis-ci.org/sourcebot/sourcebot)
+[![Coverage Status](https://coveralls.io/repos/github/sourcebot/sourcebot/badge.svg)](https://coveralls.io/github/sourcebot/sourcebot)

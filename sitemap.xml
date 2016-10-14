@@ -11,6 +11,30 @@
 
     
     <url>
+     <loc>None/installation/</loc>
+     <lastmod>2016-10-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/api/</loc>
+     <lastmod>2016-10-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/examples/</loc>
+     <lastmod>2016-10-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>None/about/</loc>
      <lastmod>2016-10-14</lastmod>
      <changefreq>daily</changefreq>

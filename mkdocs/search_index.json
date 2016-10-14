@@ -2,33 +2,103 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "text": "Welcome to Sourcebot\n\n\nSourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.\n\n\nBenefits of \nSourcebot\n:\n\n\n\n\nUses EcmaScript 6 class architecture.\n\n\nEasily debuggable.\n\n\nUses Promises, catches uncaught exceptions on the way.\n\n\n\n\nStatus", 
             "title": "Home"
         }, 
         {
-            "location": "/#welcome-to-mkdocs", 
-            "text": "For full documentation visit  mkdocs.org .", 
-            "title": "Welcome to MkDocs"
+            "location": "/#welcome-to-sourcebot", 
+            "text": "SourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.  Benefits of  Sourcebot :   Uses EcmaScript 6 class architecture.  Easily debuggable.  Uses Promises, catches uncaught exceptions on the way.", 
+            "title": "Welcome to Sourcebot"
         }, 
         {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
+            "location": "/#status", 
+            "text": "", 
+            "title": "Status"
         }, 
         {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Project layout"
+            "location": "/installation/", 
+            "text": "Installation\n\n\nFor full documentation visit \ngithub.com/sourcebot\n.\n\n\nInstall\n\n\n\n\nnpm install sourcebot --save\n - Installs Sourcebot as a dependency.\n\n\n\n\nUse cases\n\n\nFor ES6:\n\n\nconst sourcebot = require('sourcebot').Slack;\n\n\n\n\nFor ES2015+:\n\n\nimport {Slack} from 'sourcebot';\n\n\n\n\nCommand line tool\n\n\n\n\nnpm install sourcebot-cli -g\n - Installs Sourcebot command line tool.\n\n\nsourcebot create [project-name]\n - Creates a boilerplate for your bot project.", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/installation/#installation", 
+            "text": "For full documentation visit  github.com/sourcebot .", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/installation/#install", 
+            "text": "npm install sourcebot --save  - Installs Sourcebot as a dependency.   Use cases  For ES6:  const sourcebot = require('sourcebot').Slack;  For ES2015+:  import {Slack} from 'sourcebot';", 
+            "title": "Install"
+        }, 
+        {
+            "location": "/installation/#command-line-tool", 
+            "text": "npm install sourcebot-cli -g  - Installs Sourcebot command line tool.  sourcebot create [project-name]  - Creates a boilerplate for your bot project.", 
+            "title": "Command line tool"
+        }, 
+        {
+            "location": "/api/", 
+            "text": "SlackBot\n\n\n\n\nconstructor(opts)\n\n\nConstructs the SlackCore class with \nopts.token\n\n\nIf \nopts.debug\n is defined, SlackBot will enter in debug mode.\n\n\nconnect()\n\n\nConnects to Slack Web API\n\n\nrequestSlack()\n\n\nReturns Slack API endpoint.\n        * \nrtmStart()\n\n        * \ngetChannelInfo(channelId)\n\n        * \ngetUserInfo(userId)\n\n        * \nopenDirectMessageChannel(userId)\n\n\n\n\nBot\n\n\n\n\nlisten(message, callback)\n\n\nListens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.\n\n\nsend(opts)\n\n\nSends a message to specified channel, Takes \nopts\n object as a parameter containing text and channel fields. Returns empty promise.\n\n\nstartConversation(channelName, userId)\n\n\nStarts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a \nconversation\n object.\n\n\nstartPrivateConversation(user)\n\n\nStarts private conversation between a user. Returns promise containing a \nconversation\n object.\n\n\ndisconnect()\n\n\nDisconnects and removes all event listeners.\n\n\n\n\nConversation\n\n\n\n\nask(opts||message, callback)\n\n\nSends the given \nopts\n Object or  \nquestion\n String and waits for a response. If \nopts.replyPattern\n is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the \nfaultyReply\n. Returns a promise containing the \nresponse\n.\n\n\nlet opts = {text: 'Question', replyPattern: new RegExp('')}\n\n\nsay(message)\n\n\nSends the given String \nmessage\n. Returns empty promise.\n\n\naskSerial(opts)\n\n\nBehaves same as \nask()\n but this method takes an array of objects that are asked sequentially.\n\n\n\n\nOptional values:\n\n\nlet opts = {\n   text: 'Question',\n   replyPattern: new RegExp(''),\n   callback: (faultyReply) =\n {\n     return Promise.resolve()\n   }\n }", 
+            "title": "API"
+        }, 
+        {
+            "location": "/api/#slackbot", 
+            "text": "constructor(opts)  Constructs the SlackCore class with  opts.token  If  opts.debug  is defined, SlackBot will enter in debug mode.  connect()  Connects to Slack Web API  requestSlack()  Returns Slack API endpoint.\n        *  rtmStart() \n        *  getChannelInfo(channelId) \n        *  getUserInfo(userId) \n        *  openDirectMessageChannel(userId)", 
+            "title": "SlackBot"
+        }, 
+        {
+            "location": "/api/#bot", 
+            "text": "listen(message, callback)  Listens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.  send(opts)  Sends a message to specified channel, Takes  opts  object as a parameter containing text and channel fields. Returns empty promise.  startConversation(channelName, userId)  Starts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a  conversation  object.  startPrivateConversation(user)  Starts private conversation between a user. Returns promise containing a  conversation  object.  disconnect()  Disconnects and removes all event listeners.", 
+            "title": "Bot"
+        }, 
+        {
+            "location": "/api/#conversation", 
+            "text": "ask(opts||message, callback)  Sends the given  opts  Object or   question  String and waits for a response. If  opts.replyPattern  is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the  faultyReply . Returns a promise containing the  response .  let opts = {text: 'Question', replyPattern: new RegExp('')}  say(message)  Sends the given String  message . Returns empty promise.  askSerial(opts)  Behaves same as  ask()  but this method takes an array of objects that are asked sequentially.   Optional values:  let opts = {\n   text: 'Question',\n   replyPattern: new RegExp(''),\n   callback: (faultyReply) =  {\n     return Promise.resolve()\n   }\n }", 
+            "title": "Conversation"
+        }, 
+        {
+            "location": "/examples/", 
+            "text": "Examples\n\n\nFor full documentation visit \ngithub.com/sourcebot\n.\n\n\nHello World\n\n\nlet SlackCore = require('sourcebot').Slack;\nlet SlackBot = new SlackCore({\n  token: 'xoxb-17065016470-0O9T0P9zSuMVEG8yM6QTGAIB'\n});\n\n\nSlackBot\n  .connect()\n  .then((bot) =\n {\n    bot\n      .listen('hello', (response) =\n {\n        bot.send({\n          channel: response.channel,\n          text: 'world'\n        });\n      })\n  })\n  .catch((err) =\n console.error(err.message))\n\n\n\n\nConversation\n\n\nSlackBot\n  .connect()\n  .then((bot) =\n {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =\n {\n\n        bot\n          .startConversation(response.channel, response.user)\n          .then((conversation) =\n {\n            return conversation\n              .ask('How are you?')\n              .then((reply) =\n {\n                return conversation\n                  .say('Good!')\n                  .then(() =\n {\n                    return conversation.ask('What are you doing now?')\n                  })\n                  .then((response) =\n {\n                    return conversation.askSerial(['What?', 'Where?', 'When?']);\n                  })\n              })\n          });\n      })\n  }).catch((err) =\n console.error(err.message));\n\n\n\n\nPrivate Conversation\n\n\nSlackBot\n  .connect()\n  .then((bot) =\n {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =\n {\n        bot\n          .startPrivateConversation(response.user)\n          .then((conversation) =\n {\n            conversation\n              .ask('Hello world')\n              .then((response) =\n {\n                conversation.say('You said ' + response.text);\n              })\n          })\n      })\n  }).catch((err) =\n console.error(err.message));\n\n\n\n\n\nSlack's API\n\n\nSlackBot\n  .connect()\n  .then((bot) =\n {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =\n {\n\n        SlackBot\n          .requestSlack()\n          .getChannelInfo(response.channel)\n          .then((channelInfo) =\n {\n            bot.send({\n              channel: response.channel,\n              text: 'Wow, wow, wow! We have ' + channelInfo.channel.members.length + ' users in here!'\n            });\n\n            const tasks = channelInfo.channel.members.map((member) =\n {\n              return SlackBot.requestSlack().getUserInfo(member)\n            });\n\n            Promise\n              .all(tasks)\n              .then((users) =\n {\n                users.forEach((item) =\n {\n                  bot.send({\n                    channel: response.channel,\n                    text: 'Welcome \n@' + item.user.id +'|' + item.user.name +'\n, I\\'ve missed you!'\n                  });\n                })\n              })\n          })\n      })\n  }).catch((err) =\n console.error(err.message));\n\n\n\n\nSerial Questions\n\n\nSlackBot\n  .connect()\n  .then((bot) =\n {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =\n {\n\n        bot\n          .startConversation(response.channel, response.User)\n          .then((conversation) =\n {\n            return conversation\n              .askSerial([\n                {\n                  text: 'How are you?',\n                  replyPattern: new RegExp('\\\\bfine\\\\b', 'i') //Asks until the given response contains 'fine'.\n                },\n                {\n                  text: 'Where are you?',\n                  replyPattern: new RegExp('\\\\bistanbul\\\\b', 'i'),\n                  callback: (faultyReply) =\n { //Fires up if the response does not contain 'istanbul'.\n                    return conversation.say('Please indicate your city.');\n                  }\n                }\n              ]).then((responses) =\n {\n                console.log(responses);\n              });\n          });\n      })\n  }).catch((err) =\n console.error(err.message));", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/examples/#examples", 
+            "text": "For full documentation visit  github.com/sourcebot .", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/examples/#hello-world", 
+            "text": "let SlackCore = require('sourcebot').Slack;\nlet SlackBot = new SlackCore({\n  token: 'xoxb-17065016470-0O9T0P9zSuMVEG8yM6QTGAIB'\n});\n\n\nSlackBot\n  .connect()\n  .then((bot) =  {\n    bot\n      .listen('hello', (response) =  {\n        bot.send({\n          channel: response.channel,\n          text: 'world'\n        });\n      })\n  })\n  .catch((err) =  console.error(err.message))", 
+            "title": "Hello World"
+        }, 
+        {
+            "location": "/examples/#conversation", 
+            "text": "SlackBot\n  .connect()\n  .then((bot) =  {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =  {\n\n        bot\n          .startConversation(response.channel, response.user)\n          .then((conversation) =  {\n            return conversation\n              .ask('How are you?')\n              .then((reply) =  {\n                return conversation\n                  .say('Good!')\n                  .then(() =  {\n                    return conversation.ask('What are you doing now?')\n                  })\n                  .then((response) =  {\n                    return conversation.askSerial(['What?', 'Where?', 'When?']);\n                  })\n              })\n          });\n      })\n  }).catch((err) =  console.error(err.message));", 
+            "title": "Conversation"
+        }, 
+        {
+            "location": "/examples/#private-conversation", 
+            "text": "SlackBot\n  .connect()\n  .then((bot) =  {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =  {\n        bot\n          .startPrivateConversation(response.user)\n          .then((conversation) =  {\n            conversation\n              .ask('Hello world')\n              .then((response) =  {\n                conversation.say('You said ' + response.text);\n              })\n          })\n      })\n  }).catch((err) =  console.error(err.message));", 
+            "title": "Private Conversation"
+        }, 
+        {
+            "location": "/examples/#slacks-api", 
+            "text": "SlackBot\n  .connect()\n  .then((bot) =  {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =  {\n\n        SlackBot\n          .requestSlack()\n          .getChannelInfo(response.channel)\n          .then((channelInfo) =  {\n            bot.send({\n              channel: response.channel,\n              text: 'Wow, wow, wow! We have ' + channelInfo.channel.members.length + ' users in here!'\n            });\n\n            const tasks = channelInfo.channel.members.map((member) =  {\n              return SlackBot.requestSlack().getUserInfo(member)\n            });\n\n            Promise\n              .all(tasks)\n              .then((users) =  {\n                users.forEach((item) =  {\n                  bot.send({\n                    channel: response.channel,\n                    text: 'Welcome  @' + item.user.id +'|' + item.user.name +' , I\\'ve missed you!'\n                  });\n                })\n              })\n          })\n      })\n  }).catch((err) =  console.error(err.message));", 
+            "title": "Slack's API"
+        }, 
+        {
+            "location": "/examples/#serial-questions", 
+            "text": "SlackBot\n  .connect()\n  .then((bot) =  {\n    bot\n      .listen(new RegExp('start convo', 'i'), (response) =  {\n\n        bot\n          .startConversation(response.channel, response.User)\n          .then((conversation) =  {\n            return conversation\n              .askSerial([\n                {\n                  text: 'How are you?',\n                  replyPattern: new RegExp('\\\\bfine\\\\b', 'i') //Asks until the given response contains 'fine'.\n                },\n                {\n                  text: 'Where are you?',\n                  replyPattern: new RegExp('\\\\bistanbul\\\\b', 'i'),\n                  callback: (faultyReply) =  { //Fires up if the response does not contain 'istanbul'.\n                    return conversation.say('Please indicate your city.');\n                  }\n                }\n              ]).then((responses) =  {\n                console.log(responses);\n              });\n          });\n      })\n  }).catch((err) =  console.error(err.message));", 
+            "title": "Serial Questions"
         }, 
         {
             "location": "/about/", 
-            "text": "Welcome to SourceBot", 
+            "text": "The MIT License\n\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.", 
             "title": "About"
         }, 
         {
-            "location": "/about/#welcome-to-sourcebot", 
-            "text": "", 
-            "title": "Welcome to SourceBot"
+            "location": "/about/#the-mit-license", 
+            "text": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.", 
+            "title": "The MIT License"
         }
     ]
 }

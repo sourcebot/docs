@@ -1,5 +1,7 @@
 # Welcome to Sourcebot
 
+## What is Sourcebot?
+
 SourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.
 
 Benefits of **Sourcebot**:
@@ -14,3 +16,8 @@ Benefits of **Sourcebot**:
 [![Code Climate](https://codeclimate.com/github/sourcebot/sourcebot/badges/gpa.svg)](https://codeclimate.com/github/sourcebot/sourcebot)
 [![Build Status](https://travis-ci.org/sourcebot/sourcebot.svg?branch=master)](https://travis-ci.org/sourcebot/sourcebot)
 [![Coverage Status](https://coveralls.io/repos/github/sourcebot/sourcebot/badge.svg)](https://coveralls.io/github/sourcebot/sourcebot)
+
+
+## Logo
+
+![SourceBot Framework](https://avatars0.githubusercontent.com/u/21346235?v=3&s=200)

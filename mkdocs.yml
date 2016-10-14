@@ -1,5 +1,5 @@
 site_name: Sourcebot
-theme: readthedocs
+theme: flatly
 pages:
 - Home: index.md
 - Installation: installation.md

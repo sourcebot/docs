@@ -2,18 +2,28 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Sourcebot\n\n\nSourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.\n\n\nBenefits of \nSourcebot\n:\n\n\n\n\nUses EcmaScript 6 class architecture.\n\n\nEasily debuggable.\n\n\nUses Promises, catches uncaught exceptions on the way.\n\n\n\n\nStatus", 
+            "text": "Welcome to Sourcebot\n\n\nWhat is Sourcebot?\n\n\nSourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.\n\n\nBenefits of \nSourcebot\n:\n\n\n\n\nUses EcmaScript 6 class architecture.\n\n\nEasily debuggable.\n\n\nUses Promises, catches uncaught exceptions on the way.\n\n\n\n\nStatus\n\n\n\n\n\n\n\n\n\n\nLogo", 
             "title": "Home"
         }, 
         {
             "location": "/#welcome-to-sourcebot", 
-            "text": "SourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.  Benefits of  Sourcebot :   Uses EcmaScript 6 class architecture.  Easily debuggable.  Uses Promises, catches uncaught exceptions on the way.", 
+            "text": "", 
             "title": "Welcome to Sourcebot"
+        }, 
+        {
+            "location": "/#what-is-sourcebot", 
+            "text": "SourceBot is a platform independent chat bot framework. It aims to connect Facebook Messenger, Slack and Skype with the same code.  Benefits of  Sourcebot :   Uses EcmaScript 6 class architecture.  Easily debuggable.  Uses Promises, catches uncaught exceptions on the way.", 
+            "title": "What is Sourcebot?"
         }, 
         {
             "location": "/#status", 
             "text": "", 
             "title": "Status"
+        }, 
+        {
+            "location": "/#logo", 
+            "text": "", 
+            "title": "Logo"
         }, 
         {
             "location": "/installation/", 
@@ -37,22 +47,22 @@
         }, 
         {
             "location": "/api/", 
-            "text": "SlackBot\n\n\n\n\nconstructor(opts)\n\n\nConstructs the SlackCore class with \nopts.token\n\n\nIf \nopts.debug\n is defined, SlackBot will enter in debug mode.\n\n\nconnect()\n\n\nConnects to Slack Web API\n\n\nrequestSlack()\n\n\nReturns Slack API endpoint.\n        * \nrtmStart()\n\n        * \ngetChannelInfo(channelId)\n\n        * \ngetUserInfo(userId)\n\n        * \nopenDirectMessageChannel(userId)\n\n\n\n\nBot\n\n\n\n\nlisten(message, callback)\n\n\nListens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.\n\n\nsend(opts)\n\n\nSends a message to specified channel, Takes \nopts\n object as a parameter containing text and channel fields. Returns empty promise.\n\n\nstartConversation(channelName, userId)\n\n\nStarts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a \nconversation\n object.\n\n\nstartPrivateConversation(user)\n\n\nStarts private conversation between a user. Returns promise containing a \nconversation\n object.\n\n\ndisconnect()\n\n\nDisconnects and removes all event listeners.\n\n\n\n\nConversation\n\n\n\n\nask(opts||message, callback)\n\n\nSends the given \nopts\n Object or  \nquestion\n String and waits for a response. If \nopts.replyPattern\n is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the \nfaultyReply\n. Returns a promise containing the \nresponse\n.\n\n\nlet opts = {text: 'Question', replyPattern: new RegExp('')}\n\n\nsay(message)\n\n\nSends the given String \nmessage\n. Returns empty promise.\n\n\naskSerial(opts)\n\n\nBehaves same as \nask()\n but this method takes an array of objects that are asked sequentially.\n\n\n\n\nOptional values:\n\n\nlet opts = {\n   text: 'Question',\n   replyPattern: new RegExp(''),\n   callback: (faultyReply) =\n {\n     return Promise.resolve()\n   }\n }", 
+            "text": "SlackBot\n\n\n\n\nconstructor(opts)\n\n\nConstructs the SlackCore class with \nopts.token\n\n\nIf \nopts.debug\n is defined, SlackBot will enter in debug mode.\n\n\n\n\n\n\nconnect()\n\n\nConnects to Slack Web API\n\n\n\n\n\n\nrequestSlack()\n\n\nReturns Slack API endpoint.\n\n\nrtmStart()\n\n\ngetChannelInfo(channelId)\n\n\ngetUserInfo(userId)\n\n\nopenDirectMessageChannel(userId)\n\n\n\n\n\n\n\n\n\n\n\n\nBot\n\n\n\n\nlisten(message, callback)\n\n\nListens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.\n\n\n\n\n\n\nsend(opts)\n\n\nSends a message to specified channel, Takes \nopts\n object as a parameter containing text and channel fields. Returns empty promise.\n\n\n\n\n\n\nstartConversation(channelName, userId)\n\n\nStarts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a \nconversation\n object.\n\n\n\n\n\n\nstartPrivateConversation(user)\n\n\nStarts private conversation between a user. Returns promise containing a \nconversation\n object.\n\n\n\n\n\n\ndisconnect()\n\n\nDisconnects and removes all event listeners.\n\n\n\n\n\n\n\n\nConversation\n\n\n\n\nask(opts||message, callback)\n\n\nSends the given \nopts\n Object or  \nquestion\n String and waits for a response. If \nopts.replyPattern\n is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the \nfaultyReply\n. Returns a promise containing the \nresponse\n.\n\n\nlet opts = {text: 'Question', replyPattern: new RegExp('')}\n\n\n\n\n\n\nsay(message)\n\n\nSends the given String \nmessage\n. Returns empty promise.\n\n\n\n\n\n\naskSerial(opts)\n\n\nBehaves same as \nask()\n but this method takes an array of objects that are asked sequentially.\n\n\n\n\n\n\n\n\nOptional values:\n\n\nlet opts = {\n   text: 'Question',\n   replyPattern: new RegExp(''),\n   callback: (faultyReply) =\n {\n     return Promise.resolve()\n   }\n }", 
             "title": "API"
         }, 
         {
             "location": "/api/#slackbot", 
-            "text": "constructor(opts)  Constructs the SlackCore class with  opts.token  If  opts.debug  is defined, SlackBot will enter in debug mode.  connect()  Connects to Slack Web API  requestSlack()  Returns Slack API endpoint.\n        *  rtmStart() \n        *  getChannelInfo(channelId) \n        *  getUserInfo(userId) \n        *  openDirectMessageChannel(userId)", 
+            "text": "constructor(opts)  Constructs the SlackCore class with  opts.token  If  opts.debug  is defined, SlackBot will enter in debug mode.    connect()  Connects to Slack Web API    requestSlack()  Returns Slack API endpoint.  rtmStart()  getChannelInfo(channelId)  getUserInfo(userId)  openDirectMessageChannel(userId)", 
             "title": "SlackBot"
         }, 
         {
             "location": "/api/#bot", 
-            "text": "listen(message, callback)  Listens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.  send(opts)  Sends a message to specified channel, Takes  opts  object as a parameter containing text and channel fields. Returns empty promise.  startConversation(channelName, userId)  Starts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a  conversation  object.  startPrivateConversation(user)  Starts private conversation between a user. Returns promise containing a  conversation  object.  disconnect()  Disconnects and removes all event listeners.", 
+            "text": "listen(message, callback)  Listens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.    send(opts)  Sends a message to specified channel, Takes  opts  object as a parameter containing text and channel fields. Returns empty promise.    startConversation(channelName, userId)  Starts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a  conversation  object.    startPrivateConversation(user)  Starts private conversation between a user. Returns promise containing a  conversation  object.    disconnect()  Disconnects and removes all event listeners.", 
             "title": "Bot"
         }, 
         {
             "location": "/api/#conversation", 
-            "text": "ask(opts||message, callback)  Sends the given  opts  Object or   question  String and waits for a response. If  opts.replyPattern  is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the  faultyReply . Returns a promise containing the  response .  let opts = {text: 'Question', replyPattern: new RegExp('')}  say(message)  Sends the given String  message . Returns empty promise.  askSerial(opts)  Behaves same as  ask()  but this method takes an array of objects that are asked sequentially.   Optional values:  let opts = {\n   text: 'Question',\n   replyPattern: new RegExp(''),\n   callback: (faultyReply) =  {\n     return Promise.resolve()\n   }\n }", 
+            "text": "ask(opts||message, callback)  Sends the given  opts  Object or   question  String and waits for a response. If  opts.replyPattern  is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the  faultyReply . Returns a promise containing the  response .  let opts = {text: 'Question', replyPattern: new RegExp('')}    say(message)  Sends the given String  message . Returns empty promise.    askSerial(opts)  Behaves same as  ask()  but this method takes an array of objects that are asked sequentially.     Optional values:  let opts = {\n   text: 'Question',\n   replyPattern: new RegExp(''),\n   callback: (faultyReply) =  {\n     return Promise.resolve()\n   }\n }", 
             "title": "Conversation"
         }, 
         {

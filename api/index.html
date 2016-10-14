@@ -123,40 +123,64 @@
 
 <h3 id="slackbot">SlackBot</h3>
 <ul>
-<li><code>constructor(opts)</code></li>
+<li><code>constructor(opts)</code><ul>
 <li>Constructs the SlackCore class with <code>opts.token</code></li>
 <li>If <code>opts.debug</code> is defined, SlackBot will enter in debug mode.</li>
-<li><code>connect()</code></li>
+</ul>
+</li>
+<li><code>connect()</code><ul>
 <li>Connects to Slack Web API</li>
-<li><code>requestSlack()</code></li>
-<li>Returns Slack API endpoint.
-        * <code>rtmStart()</code>
-        * <code>getChannelInfo(channelId)</code>
-        * <code>getUserInfo(userId)</code>
-        * <code>openDirectMessageChannel(userId)</code></li>
+</ul>
+</li>
+<li><code>requestSlack()</code><ul>
+<li>Returns Slack API endpoint.<ul>
+<li><code>rtmStart()</code></li>
+<li><code>getChannelInfo(channelId)</code></li>
+<li><code>getUserInfo(userId)</code></li>
+<li><code>openDirectMessageChannel(userId)</code></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="bot">Bot</h3>
 <ul>
-<li><code>listen(message, callback)</code></li>
+<li><code>listen(message, callback)</code><ul>
 <li>Listens for the message. The message can be an instance of RegExp or a plain String. Returns promise containing the response.</li>
-<li><code>send(opts)</code></li>
+</ul>
+</li>
+<li><code>send(opts)</code><ul>
 <li>Sends a message to specified channel, Takes <code>opts</code> object as a parameter containing text and channel fields. Returns empty promise.</li>
-<li><code>startConversation(channelName, userId)</code></li>
+</ul>
+</li>
+<li><code>startConversation(channelName, userId)</code><ul>
 <li>Starts a conversation with the specified user in a specified channel. Takes user's slack id and the id of the channel. Returns promise containing a <code>conversation</code> object.</li>
-<li><code>startPrivateConversation(user)</code></li>
+</ul>
+</li>
+<li><code>startPrivateConversation(user)</code><ul>
 <li>Starts private conversation between a user. Returns promise containing a <code>conversation</code> object.</li>
-<li><code>disconnect()</code></li>
+</ul>
+</li>
+<li><code>disconnect()</code><ul>
 <li>Disconnects and removes all event listeners.</li>
+</ul>
+</li>
 </ul>
 <h3 id="conversation">Conversation</h3>
 <ul>
-<li><code>ask(opts||message, callback)</code></li>
+<li><code>ask(opts||message, callback)</code><ul>
 <li>Sends the given <code>opts</code> Object or  <code>question</code> String and waits for a response. If <code>opts.replyPattern</code> is provided asks until the RegExp test succeeds, fires callback upon faulty replies with the <code>faultyReply</code>. Returns a promise containing the <code>response</code>.</li>
 <li><code>let opts = {text: 'Question', replyPattern: new RegExp('')}</code></li>
-<li><code>say(message)</code></li>
+</ul>
+</li>
+<li><code>say(message)</code><ul>
 <li>Sends the given String <code>message</code>. Returns empty promise.</li>
-<li><code>askSerial(opts)</code></li>
+</ul>
+</li>
+<li><code>askSerial(opts)</code><ul>
 <li>Behaves same as <code>ask()</code> but this method takes an array of objects that are asked sequentially.</li>
+</ul>
+</li>
 </ul>
 <p>Optional values:</p>
 <pre><code class="javascript">let opts = {
